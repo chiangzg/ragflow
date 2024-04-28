@@ -96,11 +96,10 @@ services:
     image: redis:latest
     container_name: redis
     ports:
-      - 6379
+      - 6379:6379
     volumes:
       - redis_data:/data
-    command:
-      - redis-server --requirepass  infini_rag_flow
+    command: redis-server --requirepass  infini_rag_flow
     networks:
       - ragflow
     restart: always
